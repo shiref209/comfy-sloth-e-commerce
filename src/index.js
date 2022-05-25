@@ -12,7 +12,10 @@ import { Auth0Provider } from '@auth0/auth0-react'
 ReactDOM.render(
     <BrowserRouter>
         <ProductsProvider>
-            <App /> 
+            <FilterProvider>
+                <App /> 
+            </FilterProvider>
+           
         </ProductsProvider>
         
     </BrowserRouter>
