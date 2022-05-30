@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, Sidebar, Footer } from './components'
-import {Routes,Route,Link} from 'react-router-dom';
+import {Routes,Route} from 'react-router-dom';
 import {
   HomePage,AboutPage,PrivateRoute,ProductsPage,CartPage,SingleProductPage,ErrorPage,CheckoutPage
 } from './pages/index'
@@ -24,11 +24,8 @@ function App() {
         <Route path='*' element={<ErrorPage/>}/>
         <Route path='/' exact />
         <Route exact path='/about' element={<AboutPage/>}/>
-
       </Routes>
     </AuthWrapper>
- 
-    
     <Footer/>
   </div> 
 }

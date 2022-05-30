@@ -99,7 +99,6 @@ const filter_reducer = (state, action) => {
       shipping:false
     }}
   }
-  return state
   throw new Error(`No Matching "${action.type}" - action type`)
 }
 

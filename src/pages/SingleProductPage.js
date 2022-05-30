@@ -26,7 +26,7 @@ const SingleProductPage = () => {
   
   useEffect(()=>{
     fetchSingleProduct(url,id)
-  },[id]);
+  },[fetchSingleProduct,id]);
   useEffect(() => {
     if (error) {
       setTimeout(() => {

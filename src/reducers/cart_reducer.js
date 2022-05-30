@@ -5,11 +5,10 @@ import {
   REMOVE_CART_ITEM,
   TOGGLE_CART_ITEM_AMOUNT,
 } from '../actions'
-import { formatPrice } from '../utils/helpers';
 
 const cart_reducer = (state, action) => {
   if (action.type===ADD_TO_CART){
-    const {id,color,amount,product,price}=action.payload;
+    const {id,color,amount,product}=action.payload;
     let tempItem=state.cart.find((i)=>i.id===id+color);
     if (tempItem){
       let tempCart=state.cart.map((item)=>{
@@ -19,6 +18,9 @@ const cart_reducer = (state, action) => {
             newAmount=item.max;
           }
           return {...item,amount:newAmount}
+        }
+        else{
+          return item
         }
       })
       return {...state,cart:tempCart}
@@ -68,14 +70,6 @@ const cart_reducer = (state, action) => {
     })
     return {...state,cart:tempCart}
   }
-  // if (action.type===COUNT_CART_TOTALS){
-    
-  //   const totalItemsPrice=state.cart.map((item)=>{
-  //     return item.amount * item.price
-  //   })
-  //   const totalPrice=totalItemsPrice.reduce((a,b)=>a+b,0)
-  //   return {...state,total_price:totalPrice}
-  // }
   if (action.type === COUNT_CART_TOTALS) {
     const { total_items, total_price } = state.cart.reduce(
       (total, cartItem) => {
