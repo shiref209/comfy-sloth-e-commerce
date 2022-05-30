@@ -80,7 +80,6 @@ const cart_reducer = (state, action) => {
     const { total_items, total_price } = state.cart.reduce(
       (total, cartItem) => {
         const { amount, price } = cartItem;
-        console.log(total,cartItem)
         total.total_items += amount;
         total.total_price += price * amount;
         return total
@@ -89,7 +88,6 @@ const cart_reducer = (state, action) => {
     )
     return { ...state, total_items, total_price }
   }
-  return state
   throw new Error(`No Matching "${action.type}" - action type`)
 }
 
