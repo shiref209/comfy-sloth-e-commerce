@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { loadStripe } from '@stripe/stripe-js'
 import {
   CardElement,
+  PaymentElement,
   useStripe,
   Elements,
   useElements,
@@ -282,9 +283,9 @@ const Wrapper = styled.section`
       transform: rotate(360deg);
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1024px) {
     form {
-      width: 80vw;
+      width: 85vw;
     }
   }
 `;

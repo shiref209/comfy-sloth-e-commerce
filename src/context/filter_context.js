@@ -53,9 +53,7 @@ export const FilterProvider = ({ children }) => {
     dispatch({type:SET_LISTVIEW})
   }
   const updateSort=(e)=>{
-    const name=e.target.name;
     const value=e.target.value;
-    console.log(name,value)
     dispatch({type:UPDATE_SORT,payload:value})
   }
   const updateFilter=(e)=>{

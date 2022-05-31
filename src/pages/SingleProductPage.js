@@ -23,10 +23,11 @@ const SingleProductPage = () => {
     single_product: product,
     fetchSingleProduct,
   } = useProductsContext();
-  
+  // eslint-disable-next-line
   useEffect(()=>{
     fetchSingleProduct(url,id)
-  },[fetchSingleProduct,id]);
+    // eslint-disable-next-line
+  },[id]);
   useEffect(() => {
     if (error) {
       setTimeout(() => {
